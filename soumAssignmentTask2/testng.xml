@@ -1,0 +1,44 @@
+<!--
+This XML configuration defines a TestNG suite for API Automation Testing.
+It includes a listener for Extent Report and a test named "Product API Test"
+that executes various test methods from the "testCases.productApiTests" class.
+-->
+
+<suite name="API Automation Testing">
+    <listeners>
+        <!-- Extent Report Listener for generating test reports -->
+        <listener class-name="extentReport.ExtentReportListener"/>
+    </listeners>
+
+    <!-- Test Configuration for Product API Testing -->
+    <test name="Product API Test">
+        <classes>
+            <!-- Test class containing API test methods -->
+            <class name="testCases.productApiTests">
+                <methods>
+                    <!-- Test method to verify success for a valid request -->
+                    <include name="verifySuccessForValidRequest"/>
+
+                    <!-- Test method to verify bad request for null parameters -->
+                    <include name="verifyBadRequestForNullParameters"/>
+
+                    <!-- Test method to verify bad request for invalid size parameters -->
+                    <include name="verifyBadRequestForInvalidSizeParameters"/>
+
+                    <!-- Test method to verify object count in results array -->
+                    <include name="verifyObjectCountInResultsArray"/>
+
+                    <!-- Test method to verify total and pages in the API response -->
+                    <include name="verifyPerPagesValue"/>
+
+                    <!-- Test method to verify localization using different headers -->
+                    <include name="verifyLocalizationUsingDifferentHeader"/>
+
+                    <!-- Test method to verify Put api method are not allowed In Get context -->
+                    <include name="verifyPutApiMethodNotAllowedInGetContext"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

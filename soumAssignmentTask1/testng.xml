@@ -1,0 +1,83 @@
+<!--
+    TestNG Suite for Automated Tests
+
+    This TestNG suite includes multiple test cases for various functionalities
+    like login, inventory page, add to cart, checkout, and drawer navigation.
+
+-->
+<suite name="Automation Testing">
+    <listeners>
+        <!-- Extent Report Listener for generating test reports -->
+        <listener class-name="extentReport.ExtentReportListener"/>
+    </listeners>
+    <!-- Test Case: LoginTests -->
+    <test name="LoginTests">
+        <classes>
+            <class name="LoginTests">
+                <methods>
+                    <include name="validLoginTest"/>
+                    <include name="invalidLoginTest"/>
+                    <include name="emptyFieldsLoginTest"/>
+                    <include name="lockedOutUserLoginTest"/>
+                    <include name="problemUserLoginTest"/>
+                    <include name="performanceGlitchUserLoginTest"/>
+                    <include name="errorUserLoginTest"/>
+                    <include name="visualUserLoginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Test Case: InventoryTests -->
+    <test name="InventoryTests">
+        <classes>
+            <class name="InventoryTests">
+                <methods>
+                    <include name="sortProductsByNameTest"/>
+                    <include name="sortProductsByPriceLowToHighTest"/>
+                    <include name="checkProductAmountTest"/>
+                    <include name="checkAddToCartButtonTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Test Case: AddToCartPage -->
+    <test name="AddToCartPage">
+        <classes>
+            <class name="AddToCartTests">
+                <methods>
+                    <include name="addProductAndVerifyOnCartPageTest"/>
+                    <include name="removeProductFromCartTest"/>
+                    <include name="addMultipleProductsToCartTest"/>
+                    <include name="addAndRemoveMultipleProductsFromCartTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Test Case: Checkout -->
+    <test name="Checkout">
+        <classes>
+            <class name="CheckoutTests">
+                <methods>
+                    <include name="addToCartAndCheckoutTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Test Case: Drawer -->
+    <test name="Drawer">
+        <classes>
+            <class name="DrawerTests">
+                <methods>
+                    <include name="openLeftDrawerTest"/>
+                    <include name="aboutPageTest"/>
+                    <include name="logoutTest"/>
+                    <include name="resetAppStateTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
